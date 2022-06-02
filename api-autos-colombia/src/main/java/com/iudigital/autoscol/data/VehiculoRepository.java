@@ -3,9 +3,9 @@ package com.iudigital.autoscol.data;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.iudigital.autoscol.domain.Persona;
+import com.iudigital.autoscol.domain.Vehiculo;
 
 @Repository
-public interface PersonaRepository extends CrudRepository<Persona, Integer> {
+public interface VehiculoRepository extends CrudRepository<Vehiculo, Integer> {
 
 }

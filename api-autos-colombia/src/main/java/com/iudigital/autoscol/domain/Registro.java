@@ -2,17 +2,54 @@ package com.iudigital.autoscol.domain;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "registros")
 public class Registro {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_registro")
 	private Integer idRegistro;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_empleado")
 	private Empleado empleado;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_celda")
 	private Celda celda;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_vehiculo")
 	private Vehiculo vehiculo;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_persona")
 	private Persona cliente;
+	
+	@Column(name = "fecha_hora_entrada")
 	private LocalDateTime fechaEntrada;
+	
+	@Column(name = "novedad_entrada")
 	private String novedadEntrada;
+	
+	@Column(name = "fecha_hora_salida")
 	private LocalDateTime fechaSalida;
+	
+	@Column(name = "novedad_salida")
 	private String novedadSalida;
+	
+	@Column(name = "valor_pago")
 	private Double valorPago;
 
 	public Integer getIdRegistro() {
