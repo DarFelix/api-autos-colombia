@@ -23,7 +23,7 @@ public class Registro {
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_empleado")
-	private Empleado empleado;
+	private Persona empleado;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_celda")
@@ -34,16 +34,16 @@ public class Registro {
 	private Vehiculo vehiculo;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "id_persona")
+	@JoinColumn(name = "id_cliente")
 	private Persona cliente;
 	
-	@Column(name = "fecha_hora_entrada")
+	@Column(name = "fecha_entrada")
 	private LocalDateTime fechaEntrada;
 	
 	@Column(name = "novedad_entrada")
 	private String novedadEntrada;
 	
-	@Column(name = "fecha_hora_salida")
+	@Column(name = "fecha_salida")
 	private LocalDateTime fechaSalida;
 	
 	@Column(name = "novedad_salida")
@@ -60,11 +60,11 @@ public class Registro {
 		this.idRegistro = idRegistro;
 	}
 
-	public Empleado getEmpleado() {
+	public Persona getEmpleado() {
 		return empleado;
 	}
 
-	public void setEmpleado(Empleado empleado) {
+	public void setEmpleado(Persona empleado) {
 		this.empleado = empleado;
 	}
 

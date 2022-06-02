@@ -13,9 +13,10 @@ public class Rol {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_rpñ")
+	@Column(name = "id_rol")
 	private String idRol;
 
+	@Column(name = "name_rol")
 	private String nombre;
 
 	public String getIdRol() {
