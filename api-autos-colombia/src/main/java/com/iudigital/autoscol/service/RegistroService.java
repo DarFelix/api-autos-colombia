@@ -54,13 +54,13 @@ public class RegistroService {
 			rolEmp.setNombre(registro.getEmpleado().getRol().getNombre());
 			empleado.setRol(rolEmp);
 			registroUpdate.setEmpleado(empleado);
-			
+
 			Celda celda = new Celda();
 			celda.setIdCelda(registro.getCelda().getIdCelda());
 			celda.setEstado(registro.getCelda().getEstado());
 			celda.setTipoVehiculo(registro.getCelda().getTipoVehiculo());
 			registroUpdate.setCelda(celda);
-			
+
 			Vehiculo vehiculo = new Vehiculo();
 			vehiculo.setIdVehiculo(registro.getVehiculo().getIdVehiculo());
 			vehiculo.setTipoVehiculo(registro.getVehiculo().getTipoVehiculo());
@@ -70,7 +70,7 @@ public class RegistroService {
 			vehiculo.setPlaca(registro.getVehiculo().getPlaca());
 			vehiculo.setObservaciones(registro.getVehiculo().getObservaciones());
 			registroUpdate.setVehiculo(vehiculo);
-			
+
 			Persona cliente = new Persona();
 			cliente.setIdPersona(registro.getEmpleado().getIdPersona());
 			cliente.setTipoDoc(registro.getEmpleado().getTipoDoc());
@@ -87,12 +87,11 @@ public class RegistroService {
 			rolCli.setNombre(registro.getEmpleado().getRol().getNombre());
 			empleado.setRol(rolCli);
 			registroUpdate.setCliente(cliente);
-			
+
 			registroUpdate.setFechaEntrada(registro.getFechaEntrada());
 			registroUpdate.setNovedadEntrada(registro.getNovedadEntrada());
 			registroUpdate.setFechaSalida(registro.getFechaSalida());
 			registroUpdate.setNovedadSalida(registro.getNovedadSalida());
-			registroUpdate.setValorPago(registro.getValorPago());
 
 			registroRepository.save(registroUpdate);
 		}

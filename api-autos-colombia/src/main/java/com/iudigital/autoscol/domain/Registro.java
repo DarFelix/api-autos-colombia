@@ -20,37 +20,34 @@ public class Registro {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_registro")
 	private Integer idRegistro;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_empleado")
 	private Persona empleado;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_celda")
 	private Celda celda;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_vehiculo")
 	private Vehiculo vehiculo;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_cliente")
 	private Persona cliente;
-	
+
 	@Column(name = "fecha_entrada")
 	private LocalDateTime fechaEntrada;
-	
+
 	@Column(name = "novedad_entrada")
 	private String novedadEntrada;
-	
+
 	@Column(name = "fecha_salida")
 	private LocalDateTime fechaSalida;
-	
+
 	@Column(name = "novedad_salida")
 	private String novedadSalida;
-	
-	@Column(name = "valor_pago")
-	private Double valorPago;
 
 	public Integer getIdRegistro() {
 		return idRegistro;
@@ -122,14 +119,6 @@ public class Registro {
 
 	public void setNovedadSalida(String novedadSalida) {
 		this.novedadSalida = novedadSalida;
-	}
-
-	public Double getValorPago() {
-		return valorPago;
-	}
-
-	public void setValorPago(Double valorPago) {
-		this.valorPago = valorPago;
 	}
 
 }
