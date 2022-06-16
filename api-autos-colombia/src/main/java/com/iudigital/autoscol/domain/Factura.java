@@ -29,6 +29,9 @@ public class Factura {
 	@Column(name = "horas_parqueo")
 	private Double horasParqueo;
 
+	@Column(name = "medio_pago")
+	private String medioPago;
+
 	public Integer getIdFactura() {
 		return idFactura;
 	}
@@ -59,6 +62,14 @@ public class Factura {
 
 	public void setHorasParqueo(Double horasParqueo) {
 		this.horasParqueo = horasParqueo;
+	}
+
+	public String getMedioPago() {
+		return medioPago;
+	}
+
+	public void setMedioPago(String medioPago) {
+		this.medioPago = medioPago;
 	}
 
 }

@@ -1,6 +1,8 @@
 package com.iudigital.autoscol.repo.test;
 
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
+import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -13,6 +15,11 @@ public class VehiculoRepositoryTest {
 
 	@Autowired
     private VehiculoRepository vehiculoRepository;
+	
+	@Before
+	public void init() {
+		MockitoAnnotations.initMocks(this);
+	}
 	
 	@Test
     void isVehiExitsById() {

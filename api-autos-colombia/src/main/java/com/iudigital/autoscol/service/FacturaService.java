@@ -54,7 +54,7 @@ public class FacturaService {
 
 		if (facturaUpdate != null) {
 			facturaUpdate.setValorHora(factura.getValorHora());
-			
+			facturaUpdate.setMedioPago(factura.getMedioPago());		
 			facturaRepository.save(facturaUpdate);
 		}
 	}
